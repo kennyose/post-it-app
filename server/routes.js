@@ -62,5 +62,10 @@ router.post('/user/signout', (req, res) => {
 });
 
 
+// Route for Group
+router.post('/group', (req, res) => {
+  const groupID = req.body.groupname;
+});
+
 
 module.exports = router;
