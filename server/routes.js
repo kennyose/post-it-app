@@ -65,6 +65,16 @@ router.post('/user/signout', (req, res) => {
 // Route for Group
 router.post('/group', (req, res) => {
   const groupID = req.body.groupname;
+  groupRef.child(groupID).set({
+    id: groupID,
+    users: null
+  }).then(() => {
+    res.json({
+      message: `A group named ${groupID} has been created successfully!`
+    });
+  }).catch((err) => {
+    res.send(err);
+  });
 });
 
 
