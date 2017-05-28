@@ -36,5 +36,9 @@ router.post('/user/signup', (req, res) => {
 });
 
 
-
+// Sign In
+router.post('/user/signin', (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+});
 module.exports = router;
