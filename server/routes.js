@@ -77,5 +77,11 @@ router.post('/group', (req, res) => {
   });
 });
 
+router.post('/group/:groupID/:uidd', (req, res) => {
+  const groupID = req.params.groupID;
+    // Firebase get all users
+  const uid = req.params.uidd;
+});
+
 
 module.exports = router;
