@@ -49,4 +49,18 @@ router.post('/user/signin', (req, res) => {
         });
         
 });
+
+// Sign Out
+router.post('/user/signout', (req, res) => {
+  firebase.auth().signOut()
+            .then(() => {
+              res.json({ message: 'User has signed out' });
+            })
+            .catch((error) => {
+              res.json(error);
+            });
+});
+
+
+
 module.exports = router;
