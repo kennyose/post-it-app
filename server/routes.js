@@ -39,7 +39,15 @@ router.post('/user/signup', (req, res) => {
 // Sign In
 router.post('/user/signin', (req, res) => {
   const email = req.body.email;
-  const password = req.body.password;   
+  const password = req.body.password;
+  firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((user) =>{
+        res.json({ message: `The user ${email}, has logged in` });
+        })
+        .catch((error) =>{
+            res.json(error);
+        });
+        
     });
 
 module.exports = router;
