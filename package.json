@@ -4,7 +4,10 @@
   "description": "Messsaging app",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine"
+   "dev": "babel-watch server/app.js",
+    "start": "node ./dist/server.js",
+    "build": "babel server/ -d dist",
+    "test": "webpack"
   },
   "repository": {
     "type": "git",
