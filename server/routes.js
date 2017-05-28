@@ -14,4 +14,12 @@ router.get('/signup', (req, res) => {
   res.send('This is the Sign Up Page');
 });
 
+
+// Sign Up
+router.post('/user/signup', (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+  const email = req.body.email;
+});
+
 module.exports = router;
