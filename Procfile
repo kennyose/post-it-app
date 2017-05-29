@@ -1,1 +1,0 @@
-web: node babel-watch server/app.js
