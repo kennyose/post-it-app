@@ -2,12 +2,11 @@ const path = require('path');
 
 
 const config = {
-  entry: './server/app.js',
+  entry: ['./app/index.js'],
 
   output: {
-    path: path.join(__dirname, 'public'),
-    publicPath: '/',
-    filename: 'bundle.js',
+    path: './build ',
+    filename: 'bundle.js'
   },
 
   devServer: {

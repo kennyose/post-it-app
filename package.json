@@ -4,10 +4,8 @@
   "description": "Messsaging app",
   "main": "index.js",
   "scripts": {
-   "dev": "babel-watch server/app.js",
-    "start": "node ./dist/app.js",
-    "build": "babel server/ -d dist",
-    "test": "webpack"
+   "build": "webpack",
+   "start": "node ./server/app"
   },
   "repository": {
     "type": "git",
