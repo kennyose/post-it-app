@@ -49,7 +49,9 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.5",
-    "style-loader": "^0.18.1"
+    "should": "^11.2.1",
+    "style-loader": "^0.18.1",
+    "supertest": "^3.0.0"
   },
   "bugs": {
     "url": "https://github.com/Charpell/post-it-app2/issues"

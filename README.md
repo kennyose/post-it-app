@@ -18,6 +18,10 @@ Google Chrome
 ## Testing
   Install Mocha framework globally for unit testing
   npm install --global mocha
+  Mocha
+  Chai
+  Should
+  Super
 
 
 ### Service API's:
