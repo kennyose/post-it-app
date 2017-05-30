@@ -68,10 +68,9 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-eval("//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMC5qcyIsInNvdXJjZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ==");
+eval("throw new Error(\"Module build failed: SyntaxError: C:/Users/MAC 2015/Desktop/post-it-app/client/src/index.js: Unexpected token (8:16)\\n\\n  6 | import App from \\\"./components/App\\\";\\n  7 | \\n> 8 | ReactDOM.render(<App />, document.getElementById('root'));\\n    |                 ^\\n\");//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMC5qcyIsInNvdXJjZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ==");
 
 /***/ }),
 /* 1 */
