@@ -4,7 +4,7 @@
   "description": "Messsaging app",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine",
+    "test": "mocha",
     "start": "node ./server/app"
   },
   "repository": {
