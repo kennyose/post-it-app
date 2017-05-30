@@ -12,15 +12,16 @@ Google Chrome
 
 
 ## Deployment
- PostIt is hosted on heroku and can be accessed by following these links: 
+ PostIt is hosted on heroku and can be accessed via this link
+  https://post-it-app35.herokuapp.com/
 
 
 
 ### Service API's:
-  - Sign Up
-  - log-in
-  - Create group
-  - Add a user to your group
+  - Sign Up [https://post-it-app35.herokuapp.com/user/signup]
+  - log-in [https://post-it-app35.herokuapp.com/user/signin]
+  - Create group [https://post-it-app35.herokuapp.com/group]
+  - Add a user to your group [https://post-it-app35.herokuapp.com/group/:groupID/:user]
 
 
 ## Npm Packages
