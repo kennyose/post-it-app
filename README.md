@@ -25,17 +25,17 @@ PostIt is a simple application that allows friends and colleagues create groups 
 
 
 ## Npm Packages
-   babel-cli
-   babel-core
-   babel-eslint
-   babel-loader
-   babel-preset-es2015
-   babel-watch
-   body-parser
-   express
-   firebase
-   morgan
-   webpack
+     babel-cli
+     babel-core
+     babel-eslint
+     babel-loader
+     babel-preset-es2015
+     babel-watch
+     body-parser
+     express
+     firebase
+     morgan
+     webpack
 
    Development Package
 
