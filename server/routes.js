@@ -77,21 +77,26 @@ router.post('/group', (req, res) => {
   });
 });
 
-router.post('/group/:groupID/:uidd', (req, res) => {
+router.post('/group/:groupID/:uid', (req, res) => {
   const groupID = req.params.groupID;
     // Firebase get all users
-  const uid = req.params.uidd;
+  const uid = req.params.uid;
   usersRef.child(uid).once('value', (snapshot) => {
     const userEmail = snapshot.val().email;
 
-    groupRef.child(groupID).child(users).push(userEmail).then(() => {
+    groupRef.child(groupID).child('users').push(userEmail).then(() => {
       res.json({
         message: `User ${userEmail} successfully added to group ${groupID}`
       });
     });
 }).catch((err) => {
-    res.json(snapshot.val());
+    res.send(err);
   });
+});
+
+
+router.get('*', (req, res) => {
+  res.redirect('/');
 });
 
 
