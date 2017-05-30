@@ -63,15 +63,27 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module build failed: SyntaxError: C:/Users/MAC 2015/Desktop/post-it-app/client/src/index.js: Unexpected token (8:16)\\n\\n  6 | import App from \\\"./components/App\\\";\\n  7 | \\n> 8 | ReactDOM.render(<App />, document.getElementById('root'));\\n    |                 ^\\n\");//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMC5qcyIsInNvdXJjZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ==");
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+eval("// removed by extract-text-webpack-plugin//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMS5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL2NsaWVudC9zcmMvbWFpbi5zY3NzPzI5NDciXSwic291cmNlc0NvbnRlbnQiOlsiLy8gcmVtb3ZlZCBieSBleHRyYWN0LXRleHQtd2VicGFjay1wbHVnaW5cblxuXG4vLy8vLy8vLy8vLy8vLy8vLy9cbi8vIFdFQlBBQ0sgRk9PVEVSXG4vLyAuL2NsaWVudC9zcmMvbWFpbi5zY3NzXG4vLyBtb2R1bGUgaWQgPSAxXG4vLyBtb2R1bGUgY2h1bmtzID0gMCJdLCJtYXBwaW5ncyI6IkFBQUEiLCJzb3VyY2VSb290IjoiIn0=");
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-(function webpackMissingModule() { throw new Error("Cannot find module \"./client/src/index.js\""); }());
-(function webpackMissingModule() { throw new Error("Cannot find module \"./client/src/main.scss\""); }());
+__webpack_require__(0);
+module.exports = __webpack_require__(1);
 
 
 /***/ })
