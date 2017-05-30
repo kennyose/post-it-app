@@ -3,17 +3,17 @@ PostIt is a simple application that allows friends and colleagues create groups 
 
 
 ## Prerequisites
-This are what you need installed on your computer to use the application:
-Node Enviroment 
-Git 
-Firebase Database Account
-Postman
-Google Chrome
+  This are what you need installed on your computer to use the application:
+  Node Enviroment 
+  Git 
+  Firebase Database Account
+  Postman
+  Google Chrome
 
 
 ## Deployment
  PostIt is hosted on heroku and can be accessed via this link
-  https://post-it-app35.herokuapp.com/
+    https://post-it-app35.herokuapp.com/
 
 
 
@@ -36,9 +36,9 @@ Google Chrome
    firebase
    morgan
    webpack
-  
 
-  dev
+   Development Package
+
     eslint
     eslint-config-airbnb
     eslint-friendly-formatter
