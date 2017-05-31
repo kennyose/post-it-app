@@ -52,7 +52,8 @@
     "sass-loader": "^6.0.5",
     "should": "^11.2.1",
     "style-loader": "^0.18.1",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "tape": "^4.6.3"
   },
   "bugs": {
     "url": "https://github.com/Charpell/post-it-app2/issues"
