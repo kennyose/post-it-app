@@ -12,7 +12,7 @@ PostIt is a simple application that allows friends and colleagues create groups 
 
 ## Deployment
  PostIt is hosted on heroku and can be accessed via this link
-    https://post-it-app35.herokuapp.com/
+      https://post-it-app35.herokuapp.com/
 
 
 
