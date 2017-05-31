@@ -1,22 +1,19 @@
-const chai = require('chai');
+var should = require("should");
+var request = require("request");
+var expect = require("chai").expect;
+var baseUrl = "https://swapi.co/api";
+var util = require("util");
 
-const expect = chai.expect;
-
-chai.should();
-
-const returnsname = name => name;
-
-// This will test true to be true
-describe('Test 1', () => {
-  it('It should pass when everything is okay', () => {
-    expect(true).to.be.true;
-  });
+describe('returns luke', function() {
+    it('returns luke', function(done) {
+        request.get({ url: baseUrl + '/people/1/' },
+            function(error, response, body) {
+            		var bodyObj = JSON.parse(body);
+            		expect(bodyObj.name).to.equal("Luke Skywalker");
+            		expect(bodyObj.hair_color).to.equal("blond");
+                    expect(response.statusCode).to.equal(200);
+                    console.log(body);
+                done();
+            });
+    });
 });
-
-// This will test the function returnsname
-describe('Test 2', () => {
-  it('It should return the name passed into the function', () => {
-    returnsname('Ebuka').should.equal('Ebuka');
-  });
-});
-
