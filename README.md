@@ -3,49 +3,45 @@ PostIt is a simple application that allows friends and colleagues create groups 
 
 
 ## Prerequisites
-This are what you need installed on your computer to use the application:
-Node Enviroment 
-Git 
-Firebase Database Account
-Postman
-Google Chrome
+    Node Enviroment 
+    Git 
+    Firebase Database Account
+    Postman
+    Google Chrome
 
 
 ## Deployment
  PostIt is hosted on heroku and can be accessed via this link
-  https://post-it-app35.herokuapp.com/
+      https://post-it-app35.herokuapp.com/
 
-## Testing
-  Install Mocha framework globally for unit testing
-  npm install --global mocha
-  Mocha
-  Chai
-  Should
-  Super
 
 
 ### Service API's:
-  - Sign Up [https://post-it-app35.herokuapp.com/user/signup]
-  - log-in [https://post-it-app35.herokuapp.com/user/signin]
-  - Create group [https://post-it-app35.herokuapp.com/group]
-  - Add a user to your group [https://post-it-app35.herokuapp.com/group/:groupID/:user]
+  - <a href="https://post-it-app35.herokuapp.com/user/signup">Sign Up</a>
+  - <a href="https://post-it-app35.herokuapp.com/user/signin">log-in</a>
+  - <a href="https://post-it-app35.herokuapp.com/group">Create group</a>
+  - <a href="https://post-it-app35.herokuapp.com/group/:groupID/:user">Add a user to your group</a>
+   
+   
+   
+   
 
 
 ## Npm Packages
-   babel-cli
-   babel-core
-   babel-eslint
-   babel-loader
-   babel-preset-es2015
-   babel-watch
-   body-parser
-   express
-   firebase
-   morgan
-   webpack
-  
+     babel-cli
+     babel-core
+     babel-eslint
+     babel-loader
+     babel-preset-es2015
+     babel-watch
+     body-parser
+     express
+     firebase
+     morgan
+     webpack
 
-  dev
+   Development Package
+
     eslint
     eslint-config-airbnb
     eslint-friendly-formatter
@@ -55,3 +51,9 @@ Google Chrome
  
 ## Author
   Ebuka Umeh
+
+## Acknowledgments
+    Andela Bootcamp Facilitators
+    Andela Bootcamp BFAs
+    Andela Bootcampers
+    Family and Friends
