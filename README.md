@@ -3,7 +3,6 @@ PostIt is a simple application that allows friends and colleagues create groups 
 
 
 ## Prerequisites
-  This are what you need installed on your computer to use the application:
     Node Enviroment 
     Git 
     Firebase Database Account
@@ -18,11 +17,14 @@ PostIt is a simple application that allows friends and colleagues create groups 
 
 
 ### Service API's:
-  - Sign Up [https://post-it-app35.herokuapp.com/user/signup]
-  - log-in [https://post-it-app35.herokuapp.com/user/signin]
-  - Create group [https://post-it-app35.herokuapp.com/group]
-  - Add a user to your group [https://post-it-app35.herokuapp.com/group/:groupID/:user]
-   <a href="http://www.quora.com/Adam-DAngelo">Quora profile link for Adam D'Angelo</a>
+  - <a href="https://post-it-app35.herokuapp.com/user/signup">Sign Up</a>
+  - <a href="https://post-it-app35.herokuapp.com/user/signin">log-in</a>
+  - <a href="https://post-it-app35.herokuapp.com/group">Create group</a>
+  - <a href="https://post-it-app35.herokuapp.com/group/:groupID/:user">Add a user to your group</a>
+   
+   
+   
+   
 
 
 ## Npm Packages
