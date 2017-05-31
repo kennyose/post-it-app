@@ -15,7 +15,7 @@ const userSignIn = {
 const group = {
   groupname : "Andela"
 }
-
+ 
 
 
 describe('SignUp Route', () => {
@@ -64,6 +64,20 @@ describe('Create Group', () => {
     request(app)
       .post('/group')
       .send(group)
+      .set('Accept', 'application/json')
+      .expect(200)
+      .end((err) => {
+        if (err) return done(err);
+        done();
+      });
+  });
+});
+
+
+describe('Add User to the Group', () => {
+  it('The user should add other users to the group', (done) => {
+    request(app)
+      .post('/group/:groupID/:uid')
       .set('Accept', 'application/json')
       .expect(200)
       .end((err) => {
