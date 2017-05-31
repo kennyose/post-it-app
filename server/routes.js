@@ -1,5 +1,5 @@
-import User from './controllers/User';
-import Group from './controllers/Group';
+const User = require('./controllers/User');
+const Group = require('./controllers/Group');
 
 const express = require('express');
 const path = require('path');

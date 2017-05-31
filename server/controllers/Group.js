@@ -1,4 +1,4 @@
-var {firebase, db, usersRef, groupRef} = require("../server/config");
+var {firebase, db, usersRef, groupRef} = require("../config");
 
 
 class Group {
@@ -54,4 +54,4 @@ class Group {
 }
 
 
-export default Group;
+module.exports = Group;
