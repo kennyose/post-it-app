@@ -23,7 +23,11 @@ PostIt is a simple application that allows friends and colleagues create groups 
   - <a href="https://post-it-app35.herokuapp.com/group/:groupID/:user">Add a user to your group</a>
    
    
-   
+## Testing 
+  Mocha framework
+  Supertest 
+
+  To Test, run "mocha"
    
 
 
