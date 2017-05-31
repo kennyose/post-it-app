@@ -35,9 +35,9 @@ class Group {
 		usersRef
 			.child(uid)
 			.once('value', (snapshot) => {
-				const userEmail = snapshot
+				const userEmail = snapshot.exists() ? snapshot
 					.val()
-					.email;
+					.email : "No email";
 
 				groupRef
 					.child(groupID)
