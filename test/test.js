@@ -12,6 +12,10 @@ const userSignIn = {
   password: '12345ebuka'
 };
 
+const group = {
+  groupname : "Andela"
+}
+
 
 
 describe('SignUp Route', () => {
@@ -46,6 +50,20 @@ describe('SignOut Route', () => {
   it('The user should be able to signout', (done) => {
     request(app)
       .post('/user/signout')
+      .set('Accept', 'application/json')
+      .expect(200)
+      .end((err) => {
+        if (err) return done(err);
+        done();
+      });
+  });
+});
+
+describe('Create Group', () => {
+  it('The user should be able to create a group', (done) => {
+    request(app)
+      .post('/group')
+      .send(group)
       .set('Accept', 'application/json')
       .expect(200)
       .end((err) => {
