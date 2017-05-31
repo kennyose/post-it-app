@@ -1,9 +1,88 @@
-'use strict';
+const request = require('supertest');
+const app = require('../server/app');
 
-var test = require('tape');
-var request = require('supertest');
-var app = require('../super/app');
+const userSignUp = {
+  username: 'Ebuka',
+  password: '12345ebuka',
+  email: 'ebuka@gmail.com'
+};
 
-test('First test!', function (t) {
-  t.end();
+const userSignIn = {
+  email: 'ebuka@gmail.com',
+  password: '12345ebuka'
+};
+
+const group = {
+  groupname : "Andela"
+}
+ 
+
+
+describe('SignUp Route', () => {
+  it('This user should signup with his/her details', (done) => {
+    request(app)
+      .post('/user/signup')
+      .send(userSignUp)
+      .set('Accept', 'application/json')
+      .expect(200)
+      .end((err) => {
+        if (err) return done(err);
+        done();
+      });
+  });
+});
+
+describe('SignIn Route', () => {
+  it('The user should be able to signin', (done) => {
+    request(app)
+      .post('/user/signin')
+      .send(userSignIn)
+      .set('Accept', 'application/json')
+      .expect(200)
+      .end((err) => {
+        if (err) return done(err);
+        done();
+      });
+  });
+});
+
+describe('SignOut Route', () => {
+  it('The user should be able to signout', (done) => {
+    request(app)
+      .post('/user/signout')
+      .set('Accept', 'application/json')
+      .expect(200)
+      .end((err) => {
+        if (err) return done(err);
+        done();
+      });
+  });
+});
+
+describe('Create Group', () => {
+  it('The user should be able to create a group', (done) => {
+    request(app)
+      .post('/group')
+      .send(group)
+      .set('Accept', 'application/json')
+      .expect(200)
+      .end((err) => {
+        if (err) return done(err);
+        done();
+      });
+  });
+});
+
+
+describe('Add User to the Group', () => {
+  it('The user should add other users to the group', (done) => {
+    request(app)
+      .post('/group/:groupID/:uid')
+      .set('Accept', 'application/json')
+      .expect(200)
+      .end((err) => {
+        if (err) return done(err);
+        done();
+      });
+  });
 });

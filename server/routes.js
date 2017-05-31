@@ -1,103 +1,33 @@
+const User = require('./controllers/User');
+const Group = require('./controllers/Group');
+
 const express = require('express');
+const path = require('path');
 
 const router = express.Router();
 
-const { firebase, usersRef, groupRef } = require('./config');
-
-
-/* GET home route */
 router.get('/', (req, res) => {
-  res.send('Welcome to PostIt Website');
-});
-
-router.get('/signup', (req, res) => {
-  res.send('This is the Sign Up Page');
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 
 // Sign Up
-router.post('/user/signup', (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
-  const email = req.body.email;
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((user) => {
-        // add element to database
-      usersRef.push({
-        username: username,
-        password: password,
-        email: user.email
-      });
-      res.json({ message: `The user ${username}, was created and saved` });
-    })
-    .catch((error) => {
-      res.json(error);
-    });
-});
-
+router.post('/user/signup', User.signup);
 
 // Sign In
-router.post('/user/signin', (req, res) => {
-  const email = req.body.email;
-  const password = req.body.password;
-   firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((user) =>{
-        res.json({ message: `The user ${email}, has logged in` });
-        })
-        .catch((error) =>{
-            res.json(error);
-        });
-        
-});
+router.post('/user/signin', User.signin);
 
 // Sign Out
-router.post('/user/signout', (req, res) => {
-  firebase.auth().signOut()
-            .then(() => {
-              res.json({ message: 'User has signed out' });
-            })
-            .catch((error) => {
-              res.json(error);
-            });
-});
+router.post('/user/signout', User.signout);
 
+// Route for creating Group
+router.post('/group', Group.createGroup);
 
-// Route for Group
-router.post('/group', (req, res) => {
-  const groupID = req.body.groupname;
-  groupRef.child(groupID).set({
-    id: groupID,
-    users: null
-  }).then(() => {
-    res.json({
-      message: `A group named ${groupID} has been created successfully!`
-    });
-  }).catch((err) => {
-    res.send(err);
-  });
-});
-
-router.post('/group/:groupID/:uid', (req, res) => {
-  const groupID = req.params.groupID;
-    // Firebase get all users
-  const uid = req.params.uid;
-  usersRef.child(uid).once('value', (snapshot) => {
-    const userEmail = snapshot.val().email;
-
-    groupRef.child(groupID).child('users').push(userEmail).then(() => {
-      res.json({
-        message: `User ${userEmail} successfully added to group ${groupID}`
-      });
-    });
-}).catch((err) => {
-    res.send(err);
-  });
-});
+router.post('/group/:groupID/:uid', Group.addUser);
 
 
 router.get('*', (req, res) => {
   res.redirect('/');
 });
-
 
 module.exports = router;
