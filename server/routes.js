@@ -26,8 +26,6 @@ router.post('/group', Group.createGroup);
 router.post('/group/:groupID/:uid', Group.addUser);
 
 
-router.get('*', (req, res) => {
-  res.redirect('/');
-});
+
 
 module.exports = router;
