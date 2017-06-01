@@ -95,3 +95,10 @@ footer{
   background: #35424a;
   text-align: center
 }
+
+.centralize{
+   margin: auto;
+    width: 70%;  
+    padding: 10px;    
+
+}

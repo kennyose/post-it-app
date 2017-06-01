@@ -5,6 +5,8 @@ import {Switch, Route, Redirect, Link} from 'react-router-dom';
 import Signin from './Signin'
 import Signup from './Signup';
 import Group from './Group';
+import MessageBoard from './MessageBoard';
+import Home from './Home';
 
 
 const App = () => {
@@ -14,7 +16,7 @@ const App = () => {
           <div className="container">
             <div id="branding">
               <h1>
-                <span className="highlight">PostIt 
+                <span className="highlight">PostIt &nbsp;
                 </span>Meseenger App</h1>
             </div>
             <nav>
@@ -31,6 +33,9 @@ const App = () => {
                 <li>
                   <Link to='/group' >Group</Link>
                 </li>
+                <li>
+                  <Link to='/messageBoard' >MessageBoard</Link>
+                </li>
               </ul>
             </nav>
           </div>
@@ -40,6 +45,8 @@ const App = () => {
           <Route exact path='/user/signup' component={Signup}/>
           <Route path='/user/signin' component={Signin}/>
           <Route path='/group' component={Group}/>
+          <Route path='/messageBoard' component={MessageBoard}/>
+          <Route path='/' component={Home}/>
         </Switch>
         <div className="container">
         <div className="container">
