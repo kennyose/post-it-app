@@ -68,8 +68,8 @@ PostIt is a simple application that allows friends and colleagues create groups 
 ## Author
 	Ebuka Umeh
 
-## Acknowledgments
-    Andela Bootcamp Facilitators
-    Andela Bootcamp BFAs
-    Andela Bootcampers
-    Family and Friends
+# Acknowledgments
+  Andela Bootcamp Facilitators
+  Andela Bootcamp BFAs
+  Andela Bootcampers
+  Family and Friends
