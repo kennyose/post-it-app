@@ -4,6 +4,7 @@ import {Switch, Route, Redirect, Link} from 'react-router-dom';
 
 import Signin from './Signin'
 import Signup from './Signup';
+import Group from './Group';
 
 
 const App = () => {
@@ -13,19 +14,22 @@ const App = () => {
           <div className="container">
             <div id="branding">
               <h1>
-                <span className="highlight">PostIt
+                <span className="highlight">PostIt 
                 </span>Meseenger App</h1>
             </div>
             <nav>
               <ul>
                 <li>
-                  <a href>Home</a>
+                  <Link to='/'>Home</Link>
                 </li>
                 <li>
                   <Link to='/user/signin'>Sign In</Link>
                 </li>
                 <li>
                   <Link to='/user/signup' >Sign Up</Link>
+                </li>
+                <li>
+                  <Link to='/group' >Group</Link>
                 </li>
               </ul>
             </nav>
@@ -35,18 +39,19 @@ const App = () => {
         <Switch>
           <Route exact path='/user/signup' component={Signup}/>
           <Route path='/user/signin' component={Signin}/>
+          <Route path='/group' component={Group}/>
         </Switch>
-
-         
-    
-
+        <div className="container">
+        <div className="container">
+            
+          </div>
+            
+          </div>
 
         <footer>
           <p>Andela, Copyright © 2017</p>
         </footer>
-            
-         
-       
+                  
         </div>
     )
 }
