@@ -1,11 +1,15 @@
 # Post-it-app
 PostIt is a simple application that allows friends and colleagues create groups for notifications. This way one person can post notifications to everyone by sending a message once. The application allows people create accounts, create groups and add registered users to the groups, and then send messages out to these groups whenever they want.
 
-## Feautures
-    Create accounts
-    Create groups and 
-    Add registered users to the groups
-    Send messages
+# Features
+  1. Sign Up
+  2. Log in
+  3. Create group
+  4. Add Member to group
+  5. Send broadcast message to group members
+
+   <a href="https://github.com/Charpell/post-it-app/tree/develop">Click here</a> for API documentation.
+  
 
 
 ## Prerequisites
@@ -29,10 +33,6 @@ PostIt is a simple application that allows friends and colleagues create groups 
   - <a href="https://post-it-app35.herokuapp.com/group/:groupID/:user">Add a user to your group</a>
    
    
-   
-   
-
-
 ## Npm Packages
      babel-cli
      babel-core
@@ -54,6 +54,16 @@ PostIt is a simple application that allows friends and colleagues create groups 
     eslint-plugin-import
     eslint-plugin-jsx-a11y
     eslint-plugin-react
+
+
+# Installation
+  Kindly follow the steps below to setup a local development environment.
+  1. Clone this repository from a terminal git clone https://github.com/Charpell/post-it-app.git.
+  2. Move into the project directory
+  3. Install project dependencies npm install
+  4. Create an account of firebase and set up your app
+  5. Create an .env file and set the variables in .env-sample to your specified database connection
+  6. Run npm run start-server
  
 ## Author
 	Ebuka Umeh
