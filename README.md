@@ -12,7 +12,11 @@ PostIt is a simple application that allows friends and colleagues create groups 
 
 ## Deployment
  PostIt is hosted on heroku and can be accessed via this link
+<<<<<<< HEAD
       https://post-it-app35.herokuapp.com/
+=======
+    https://post-it-app35.herokuapp.com/
+>>>>>>> a3db5f3caa32708acf0737761ad73d07fd56a26d
 
 
 
@@ -23,11 +27,15 @@ PostIt is a simple application that allows friends and colleagues create groups 
   - <a href="https://post-it-app35.herokuapp.com/group/:groupID/:user">Add a user to your group</a>
    
    
+<<<<<<< HEAD
 ## Testing 
   Mocha framework
   Supertest 
 
   To Test, run "mocha"
+=======
+   
+>>>>>>> a3db5f3caa32708acf0737761ad73d07fd56a26d
    
 
 
@@ -54,7 +62,11 @@ PostIt is a simple application that allows friends and colleagues create groups 
     eslint-plugin-react
  
 ## Author
+<<<<<<< HEAD
   Ebuka Umeh
+=======
+	Ebuka Umeh
+>>>>>>> a3db5f3caa32708acf0737761ad73d07fd56a26d
 
 ## Acknowledgments
     Andela Bootcamp Facilitators
