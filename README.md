@@ -1,75 +1,57 @@
-# Post-it-app
-PostIt is a simple application that allows friends and colleagues create groups for notifications. This way one person can post notifications to everyone by sending a message once. The application allows people create accounts, create groups and add registered users to the groups, and then send messages out to these groups whenever they want.
+Post-it-app
 
+Post-It is a simple application that allows friends and colleagues create groups for notifications.
 
-## Prerequisites
-    Node Enviroment 
-    Git 
-    Firebase Database Account
-    Postman
-    Google Chrome
+It is a simple RESTful api, which creates users, create group and add memebrs to a group users.
 
+use x-www-formurlencoded parameters.
 
-## Deployment
- PostIt is hosted on heroku and can be accessed via this link
-<<<<<<< HEAD
-      https://post-it-app35.herokuapp.com/
-=======
-    https://post-it-app35.herokuapp.com/
->>>>>>> a3db5f3caa32708acf0737761ad73d07fd56a26d
+Methods
 
+'/':
 
+    .GET: Welcome to PostIt-App
+'/user/signup'
 
-### Service API's:
-  - <a href="https://post-it-app35.herokuapp.com/user/signup">Sign Up</a>
-  - <a href="https://post-it-app35.herokuapp.com/user/signin">log-in</a>
-  - <a href="https://post-it-app35.herokuapp.com/group">Create group</a>
-  - <a href="https://post-it-app35.herokuapp.com/group/:groupID/:user">Add a user to your group</a>
-   
-   
-<<<<<<< HEAD
-## Testing 
-  Mocha framework
-  Supertest 
+.POST: Create a user
 
-  To Test, run "mocha"
-=======
-   
->>>>>>> a3db5f3caa32708acf0737761ad73d07fd56a26d
-   
+    parameters:
 
+        email: string
 
-## Npm Packages
-     babel-cli
-     babel-core
-     babel-eslint
-     babel-loader
-     babel-preset-es2015
-     babel-watch
-     body-parser
-     express
-     firebase
-     morgan
-     webpack
+        username: string
 
-   Development Package
+        password: string
+'/user/signin'
 
-    eslint
-    eslint-config-airbnb
-    eslint-friendly-formatter
-    eslint-plugin-import
-    eslint-plugin-jsx-a11y
-    eslint-plugin-react
- 
-## Author
-<<<<<<< HEAD
-  Ebuka Umeh
-=======
-	Ebuka Umeh
->>>>>>> a3db5f3caa32708acf0737761ad73d07fd56a26d
+.POST: Sign in user
 
-## Acknowledgments
-    Andela Bootcamp Facilitators
-    Andela Bootcamp BFAs
-    Andela Bootcampers
-    Family and Friends
+    parameters:
+
+        email: string
+
+        password: string
+'/group'
+
+.POST: Create a group
+
+    parameters:
+
+        email: string
+
+        password: string
+    
+            groupName: string
+'/group/groupId/user'
+
+.POST:Add a user a group
+
+    parameters:
+
+        email: string
+
+        password: string
+    
+            groupName: string
+    
+            groupMember: string
