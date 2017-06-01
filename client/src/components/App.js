@@ -31,6 +31,7 @@ const App = () => {
             </nav>
           </div>
         </header>
+        <p>PostIt is a simple application that allows friends and colleagues create groups for notifications. This way one person can post notifications to everyone by sending a message once.</p.
         <img src="https://pbs.twimg.com/media/DASTsaoW0AA_rLW.jpg" />
 
         <Switch>

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Signup extends Component {
     render() {
         return (
-            <div> 
+            <div>
                 {/*Signup form*/}
                 <section id="showcase">
         <div id="signupbox" style={{marginTop: 50}} className="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
