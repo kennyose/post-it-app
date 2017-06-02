@@ -17,7 +17,7 @@ const App = () => {
             <div id="branding">
               <h1>
                 <span className="highlight">PostIt &nbsp;
-                </span>Meseenger App</h1>
+                </span>Messenger App</h1>
             </div>
             <nav>
               <ul>
