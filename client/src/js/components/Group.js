@@ -8,10 +8,10 @@ class Group extends Component {
       <section className="centralize">
           <p>Create a Group</p>
            <form>
-        Group Name:<br />
-        <input type="text" name="groupname"/>
-        <br />
-        Add Members:<br />
+        
+        <input type="text" name="groupname" defaultValue="Group Name" />
+       
+        
         <input type="submit" defaultValue="Create Group" />
       </form>
 
@@ -20,12 +20,12 @@ class Group extends Component {
          <section className="centralize">
           <p>Add Users to a Group</p>
            <form>
-        Group Name:<br />
-        <input type="text" name="groupname"/>
-        <br />
-        User Name:<br />
-        <input type="text" name="Add member" defaultValue="User 1" />
-        <br /><br />
+        
+        <input type="text" name="groupname" defaultValue="Group Name" />
+     
+        
+        <input type="text" name="Add member" defaultValue="Add User" />
+      
         <input type="submit" defaultValue="Add User" />
       </form>
         
