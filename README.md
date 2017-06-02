@@ -25,12 +25,6 @@ PostIt is a simple application that allows friends and colleagues create groups 
       https://post-it-app35.herokuapp.com/
 
 
-
-### Service API's:
-  - <a href="https://post-it-app35.herokuapp.com/user/signup">Sign Up</a>
-  - <a href="https://post-it-app35.herokuapp.com/user/signin">log-in</a>
-  - <a href="https://post-it-app35.herokuapp.com/group">Create group</a>
-  - <a href="https://post-it-app35.herokuapp.com/group/:groupID/:user">Add a user to your group</a>
  
 # Test
   The mohcha framework and supertest module are used for testing our routes
