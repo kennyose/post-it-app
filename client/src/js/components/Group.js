@@ -4,23 +4,31 @@ class Group extends Component {
   render() {
     return (
       <div>
-       
-        <section>
-        	<p>Welcome to the Group Page</p>
-           <form className="centralize">
+        
+        <section className="centralize">
+        	<p>Create a Group</p>
+           <form>
         Group Name:<br />
-        <input type="text" name="groupname" defaultValue="Andela" />
+        <input type="text" name="groupname"/>
         <br />
         Add Members:<br />
-        <input type="text" name="Add member" defaultValue="User 1" />
-        <br /><br />
         <input type="submit" defaultValue="Create Group" />
       </form>
-          <div className="container">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2db2pFtYCrUNoFs2B4vTvlhZ_QceMzosrPowj5H8L8gh7i1g8" />
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2db2pFtYCrUNoFs2B4vTvlhZ_QceMzosrPowj5H8L8gh7i1g8" />
-            
-          </div>
+
+      
+        </section>
+         <section className="centralize">
+          <p>Add Users to a Group</p>
+           <form>
+        Group Name:<br />
+        <input type="text" name="groupname"/>
+        <br />
+        User Name:<br />
+        <input type="text" name="Add member" defaultValue="User 1" />
+        <br /><br />
+        <input type="submit" defaultValue="Add User" />
+      </form>
+        
         </section>
 
       </div>
