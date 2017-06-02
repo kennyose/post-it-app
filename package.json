@@ -4,7 +4,7 @@
   "description": "Messsaging app",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 75000",
+    "test": "mocha --timeout 15000",
     "start": "node ./server/app"
   },
   "repository": {

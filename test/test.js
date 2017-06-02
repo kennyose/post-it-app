@@ -16,6 +16,19 @@ const group = {
   groupname : "Andela"
 }
  
+describe('PostIt-app:', () => {
+    //  Unit test for the App Homepage route
+        it('welcome user`s to its page', (done) => {
+            request(app)
+                .get('/')
+                .set('Accept', 'application/json')
+                 .expect(200)
+      .end((err) => {
+        if (err) return done(err);
+        done();
+      });
+  });
+});
 
 
 describe('SignUp Route', () => {
