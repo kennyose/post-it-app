@@ -26,7 +26,7 @@ class Signup extends Component {
             </div>
           </div>
         </form>
-        <button type="button" className="cancelbtn">Sign Up with Google</button>
+        
       </div>
         
       </section>

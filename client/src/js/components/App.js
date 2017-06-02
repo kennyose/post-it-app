@@ -48,14 +48,8 @@ const App = () => {
           <Route path='/messageBoard' component={MessageBoard}/>
           <Route path='/' component={Home}/>
         </Switch>
-        <div className="container">
-        <div className="container">
-            
-          </div>
-            
-          </div>
-
-        <footer>
+        
+     <footer>
           <p>Andela, Copyright © 2017</p>
         </footer>
                   
