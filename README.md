@@ -17,7 +17,7 @@ PostIt is a simple application that allows friends and colleagues create groups 
     Git 
     Firebase Database Account
     Postman
-    Google Chrome
+    Google Chrome 
 
 
 ## Deployment
