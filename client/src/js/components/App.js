@@ -74,25 +74,27 @@ class App extends Component  {
                 <li>
                   <Link to='/'>Home</Link>
                 </li>
-                <li>
-                  <Link to='/mesageBoard'>MessageBoard</Link>
-                </li>
-                <li>
-                  <Link to='/group' >Group</Link>
-                </li>
-
+          
                 
                 <li>
                   {this.state.authed
-                    ? <button
+                    ? <span>
+                      <Link to='/messageBoard' >MessageBoard &nbsp;</Link>
+                      <Link to='/group' >Group&nbsp;</Link>
+                      
+
+                      <button
                         style={{border: 'none', background: 'transparent'}}
                         onClick={() => {
                           logout()
                         }}
-                        className="navbar-brand">Logout</button>
+                        >Logout</button>
+                      
+                      </span>
+                        
                     : <span>
-                        <Link to="/user/signin" className="navbar-brand">Sign In</Link>
-                        <Link to="/user/signup" className="navbar-brand">Sign Up</Link>                    
+                        <Link to="/user/signin">SignIn&nbsp;</Link>
+                        <Link to="/user/signup">SignUp</Link>                    
                       </span>}
                 </li>                
               </ul>
@@ -106,7 +108,8 @@ class App extends Component  {
                 <PublicRoute authed={this.state.authed} path='/user/signin' component={Signin} />
                 <PublicRoute authed={this.state.authed} path='/user/signup' component={Signup} />
                 <PrivateRoute authed={this.state.authed} path='/messageBoard' component={MessageBoard} />
-                <Route render={() => <h3>No sf</h3>} />
+                 <PrivateRoute authed={this.state.authed} path='/group' component={Group} />
+                <Route render={() => <h3>You must be Logged In to see this page</h3>} />
           
         </Switch>
         

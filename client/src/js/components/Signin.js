@@ -44,7 +44,7 @@ class Signin extends Component {
             </div>
           }
             <div className="clearfix">              
-              <button type="submit" className="signupbtn">Sign In</button>
+              <button type="submit" className="btn btn-primary">Sign In</button>
              
             </div>
           </div>
