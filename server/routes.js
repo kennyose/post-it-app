@@ -26,6 +26,4 @@ router.post('/group', Group.createGroup);
 router.post('/group/:groupID/:uid', Group.addUser);
 
 
-
-
 module.exports = router;

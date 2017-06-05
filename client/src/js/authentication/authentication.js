@@ -1,24 +1,22 @@
 import { usersRef, firebaseAuth } from '../firebase/firebase';
 
-export function auth (username,email, pw) {
+export const auth = (username, email, pw) => {
   return firebaseAuth().createUserWithEmailAndPassword(email, pw)
     .then(() => {
-				// add element to database
-        var result = firebaseAuth().currentUser;
-              usersRef.child(result.uid).set({
-                  username,
-                  email,
-                  uid: result.uid
-				});
-				res.send('Signup Successful');
-        console.log('success')
-			})
-			.catch((error) => {
-				res.send('Error');
-			});
+// add element to database
+      const result = firebaseAuth().currentUser;
+      usersRef.child(result.uid).set({
+        username,
+        email,
+        uid: result.uid
+      });
+    })
+.catch((error) => {
+  res.send(error);
+});
 }
 
-export function logout () {
+export const logout = () => {
   return firebaseAuth().signOut()
 }
 
