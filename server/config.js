@@ -10,6 +10,8 @@ var config = {
   };
   firebase.initializeApp(config);
 
+  const firebaseAuth = firebase.auth;
+
   let db = firebase.database();
   let usersRef = db.ref('users');
   let groupRef = db.ref('Groups');
@@ -18,7 +20,8 @@ module.exports = {
   firebase,
   db,
   usersRef,
-  groupRef
+  groupRef,
+  firebaseAuth
 };
 
 

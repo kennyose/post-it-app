@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
+import { usersRef, firebaseAuth } from '../firebase/firebase';
 
 class Group extends Component {
+
+
   render() {
     return (
       <div>
@@ -19,7 +22,7 @@ class Group extends Component {
         </section>
          <section className="centralize">
           <p>Add Users to a Group</p>
-           <form>
+           <form >
         
         <input type="text" name="groupname" defaultValue="Group Name" />
      
