@@ -1,43 +1,20 @@
 import React, { Component } from 'react';
+import { auth } from '../authentication/authentication'
 
-import { emailSignup } from '../actions/AppActions';
+
+function setErrorMsg(error) {
+  return {
+    registerError: error.message
+  }
+}
 
 class Signup extends Component {
-   constructor(props) {
-    super(props);
-    this.state = {
-      username: '',
-      password: '',
-      email: '',
-    };
 
-
-    this.submitForm = (e) => {
-      e.preventDefault();
-      var username = this.state.username;
-      var email = this.state.email;
-      var password = this.state.password;
-      this.props.dispatch(emailSignup(username, email, password));
-      console.log('Email Signup!')
-    }
-
-    this.setUserName = (e) => {
-      this.setState({
-        username: e.target.value
-      });
-    }
-
-    this.setEmail = (e) => {
-      this.setState({
-        email: e.target.value
-      })
-    }
-
-    this.setPassword = (e) => {
-      this.setState({
-        password: e.target.value
-      })
-    }
+  state = { registerError: null }
+  handleSubmit = (e) => {
+    e.preventDefault()
+    auth(this.username.value, this.email.value, this.pw.value)
+      .catch(e => this.setState(setErrorMsg(e)))
   }
 
     render() {
@@ -47,25 +24,33 @@ class Signup extends Component {
                 <section>
                 <div>
         <h2>Signup Form</h2>
-        <form onSubmit={ this.submitForm } style={{border: '1px solid #ccc'}}>
+        <form onSubmit={this.handleSubmit} style={{border: '1px solid #ccc'}}>
           <div className="container">
 
             <label><b>Username</b></label>
-            <input type="text" placeholder="Username" name="username" required />
+            <input type="text" placeholder="Username" name="username" ref={(username) => this.username = username}/>
 
             <label><b>Email</b></label>
-            <input type="text" placeholder="Email" name="email" required />
+            <input type="text" placeholder="Email" name="email" ref={(email) => this.email = email} />
 
             <label><b>Password</b></label>
-            <input type="password" placeholder="Password" name="psw" required />
+            <input type="password" placeholder="Password" name="psw" ref={(pw) => this.pw = pw}/>
            
+             {
+            this.state.registerError &&
+            <div className="alert alert-danger" role="alert">
+              <span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span className="sr-only">Error:</span>
+              &nbsp;{this.state.registerError}
+            </div>
+          }
             <div className="clearfix">              
-              <button type="submit" className="signupbtn">Sign Up</button>
+              <button type="submit"  className="btn btn-primary">Sign Up</button>
               
             </div>
           </div>
         </form>
-        
+      
       </div>
         
       </section>
