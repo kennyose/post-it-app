@@ -1,5 +1,6 @@
-import { usersRef, firebaseAuth } from '../firebase/firebase';
+import { usersRef, firebaseAuth, ref } from '../firebase/firebase';
 
+// Sign Up Authentication
 export const auth = (username, email, pw) => {
   return firebaseAuth().createUserWithEmailAndPassword(email, pw)
     .then(() => {
@@ -12,41 +13,46 @@ export const auth = (username, email, pw) => {
       });
     })
 .catch((error) => {
-  res.send(error);
+  alert(error);
 });
-}
+};
 
+
+// User Logout
 export const logout = () => {
-  return firebaseAuth().signOut()
-}
+  return firebaseAuth().signOut();
+};
 
-export function login (email, pw) {
+
+// User SignIn
+export const login = (email, pw) =>  {
   return firebaseAuth().signInWithEmailAndPassword(email, pw)
-    .catch(function(error) {
-      
+    .catch((error) => {
   // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
+      const errorCode = error.code;
+      const errorMessage = error.message;
 
-  if (errorCode === 'auth/wrong-password') {
+      if (errorCode === 'auth/wrong-password') {
+        alert('Wrong password.');
+      } else {
+        alert(errorMessage);
+      }
+        alert(error);
+    });
+};
 
-    alert('Wrong password.');
-  } else {
-    alert(errorMessage);
-  }
-  console.log(error);
-});
-}
 
-export function resetPassword (email) {
-  return firebaseAuth().sendPasswordResetEmail(email)
-}
+// Reset Password
+export const resetPassword = (email) => {
+  return firebaseAuth().sendPasswordResetEmail(email);
+};
 
-export function saveUser (user) {
+
+export const saveUser = (user) => {
   return ref.child(`users/${user.uid}/info`)
     .set({
       email: user.email,
       uid: user.uid
     })
-    .then(() => user)
-}
+    .then(() => user);
+};
