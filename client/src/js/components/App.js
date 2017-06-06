@@ -34,6 +34,7 @@ function PublicRoute ({component: Component, authed, ...rest}) {
   )
 }
 
+// Create App component
 class App extends Component  {
    state = {
     authed: false,

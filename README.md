@@ -22,19 +22,23 @@ PostIt is a simple application that allows friends and colleagues create groups 
 
 # Deployment
  PostIt is hosted on heroku and can be accessed via this link
-    https://post-it-app35.herokuapp.com/
+        https://post-it-app35.herokuapp.com/
 
 
-# Getting Started
-  To get started, run the following command
-  npm install
-  npm start
-  webpack -w
+# Installation
+  Kindly follow the steps below to setup a local development environment.
+  1. Clone this repository from a terminal git clone https://github.com/Charpell/post-it-app.git.
+  2. Move into the project directory
+  3. Install project dependencies npm install
+  4. Create an account of firebase and set up your app
+  5. Create an .env file and set the variables in .env-sample to your specified database connection
+  6. Run npm run start-server
+  7. Run npm webpack -w
 
 
 # Test
-  The mohcha framework and supertest module are used for testing our routes
-  To test, run "mocha"
+  The mocha framework and supertest module are used for testing our routes
+    To test, run "mocha"
  
 
  
@@ -76,15 +80,6 @@ PostIt is a simple application that allows friends and colleagues create groups 
     babel-preset-es2015
     babel-watch
 
-
-# Installation
-  Kindly follow the steps below to setup a local development environment.
-  1. Clone this repository from a terminal git clone https://github.com/Charpell/post-it-app.git.
-  2. Move into the project directory
-  3. Install project dependencies npm install
-  4. Create an account of firebase and set up your app
-  5. Create an .env file and set the variables in .env-sample to your specified database connection
-  6. Run npm run start-server
  
 ## Author
     Ebuka Umeh

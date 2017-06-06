@@ -1,4 +1,4 @@
-import { usersRef, firebaseAuth, ref } from '../firebase/firebase';
+import { usersRef, firebaseAuth } from '../firebase/firebase';
 
 // Sign Up Authentication
 export const auth = (username, email, pw) => {
