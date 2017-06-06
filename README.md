@@ -25,10 +25,17 @@ PostIt is a simple application that allows friends and colleagues create groups 
       https://post-it-app35.herokuapp.com/
 
 
- 
+## Getting Started
+To get started, run the fllowing command
+    npm install 
+    npm start 
+    webpack -w
+
+
+
 # Test
-  The mohcha framework and supertest module are used for testing our routes
-  To test, run "mocha"  
+The mohcha framework and supertest module are used for testing our routes
+    To test, run "mocha"  
    
 ## Npm Packages
      

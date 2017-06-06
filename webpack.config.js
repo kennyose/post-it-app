@@ -44,15 +44,7 @@ const config = {
         exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [
-            'css-loader',
-            {
-              loader: 'sass-loader',
-              query: {
-                sourceMap: false,
-              },
-            },
-          ],
+          use: ['style-loader', 'css-loader', 'sass-loader'],
         }),
        }
       // { test: /\.(png|jpg)$/, use: 'url-loader?limit=15000' },
