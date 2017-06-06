@@ -1,18 +1,18 @@
-var Dispatcher = require('flux').Dispatcher;
-var assign = require('object-assign');
+const Dispatcher = require('flux').Dispatcher;
+const assign = require('object-assign');
 
-var AppDispatcher = assign(new Dispatcher(), {
-  handleViewAction: function(action) {
+const AppDispatcher = assign(new Dispatcher(), {
+  handleViewAction: (action) => {
     this.dispatch({
       source: 'VIEW_ACTION',
-      action: action 
+      action
     });
   },
-  handleSignUp: function(action){
-	  this.dispatch({
-		  source: 'SIGN_UP',
-		  action: action
-	  })
+  handleSignUp: (action) => {
+    this.dispatch({
+      source: 'SIGN_UP',
+      action
+    });
   }
 });
 

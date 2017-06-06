@@ -1,5 +1,4 @@
-var AppActions = require('../actions/AppActions');
+const AppActions = require('../actions/AppActions');
 
 module.exports = {
-	
-}
+};

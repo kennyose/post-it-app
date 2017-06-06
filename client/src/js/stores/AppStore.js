@@ -1,17 +1,17 @@
-var AppDispatcher = require('../dispatcher/AppDispatcher');
-var EventEmitter = require('events').EventEmitter;
-var assign = require('object-assign');
+const AppDispatcher = require('../dispatcher/AppDispatcher');
+const EventEmitter = require('events').EventEmitter;
+const assign = require('object-assign');
 
 
-var CHANGE_EVENT = 'change';
+const CHANGE_EVENT = 'change';
 
-var AppStore = assign({}, EventEmitter.prototype, {
-  emitChange: function() {
+const AppStore = assign({}, EventEmitter.prototype, {
+  emitChange: () => {
     this.emit(CHANGE_EVENT);
   }
 });
 
-AppDispatcher.register(function(payload){
+AppDispatcher.register((payload) => {
   console.log(payload);
   return true;
 });
