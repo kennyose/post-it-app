@@ -20,22 +20,24 @@ PostIt is a simple application that allows friends and colleagues create groups 
     Google Chrome 
 
 
-## Deployment
+# Deployment
  PostIt is hosted on heroku and can be accessed via this link
-      https://post-it-app35.herokuapp.com/
+    https://post-it-app35.herokuapp.com/
 
 
-## Getting Started
-To get started, run the fllowing command
-    npm install 
-    npm start 
-    webpack -w
-
+# Getting Started
+  To get started, run the following command
+  npm install
+  npm start
+  webpack -w
 
 
 # Test
-The mohcha framework and supertest module are used for testing our routes
-    To test, run "mocha"  
+  The mohcha framework and supertest module are used for testing our routes
+  To test, run "mocha"
+ 
+
+ 
    
 ## Npm Packages
      
