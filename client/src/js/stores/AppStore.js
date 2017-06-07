@@ -1,19 +1,29 @@
-const AppDispatcher = require('../dispatcher/AppDispatcher');
-const EventEmitter = require('events').EventEmitter;
-const assign = require('object-assign');
+import { EventEmitter } from 'events';
+import dispatcher from '../dispatcher/AppDispatcher';
 
-
-const CHANGE_EVENT = 'change';
-
-const AppStore = assign({}, EventEmitter.prototype, {
-  emitChange: () => {
-    this.emit(CHANGE_EVENT);
+class AppStore extends EventEmitter {
+  constructor() {
+    super();
+    this.state = {
+      username: '',
+      password: '',
+      email: ''
   }
-});
 
-AppDispatcher.register((payload) => {
-  console.log(payload);
-  return true;
-});
+  
+  handleActions(action) {
+    switch (action.type) {
+      case 'SIGN_UP':
+        this.loadContacts(action.data);
+        break;
+      case 'SIGN_IN':
+        this.checkSaveStatus(action.message);
+        break;
+    
+    }
+  }
+}
 
-module.exports = AppStore;
+const appStore = new AppStore();
+dispatcher.register(appStore.handleActions.bind(appStore));
+export default appStore;
