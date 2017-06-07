@@ -7,11 +7,20 @@ class Group extends Component {
     handleSubmit(e){
         e.preventDefault();
        var groupID = this.refs.group.value;
-       console.log(groupID)
-       group(groupID)
-    
 
+
+       let groupRef = this.refs.group
+       let groupname = groupRef.value;
+       groupRef.value = "";
+        if (typeof groupname === 'string' && groupname.length > 0){
+           group(groupID)   
     }
+     
+
+      
+    }
+
+  
 
 
   render() {

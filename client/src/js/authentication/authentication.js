@@ -61,6 +61,7 @@ export const saveUser = (user) => {
 
 // This will allow authenticated users create group
 export const group = (groupID) => {
+ 
   return groupRef
     .child(groupID)
     .once('value', (snapshot) => {
@@ -72,12 +73,14 @@ export const group = (groupID) => {
         users: null
       })
       .then(() => {
-        console.log(`Group ${groupID} created`);
+        alert(`Group ${groupID} successfuly created`);
+        console.log(`Group ${groupID} successfuly created`);
       })
       .catch((err) => {
         console.log(err);
       });
       } else {
+        alert('Group already exists');
         console.log('Group already exists');
       }
     });
