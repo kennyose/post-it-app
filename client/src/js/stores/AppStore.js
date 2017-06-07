@@ -10,56 +10,16 @@ class AppStore extends EventEmitter {
       email: ''
   }
 
-  loadContacts(data) {
-    this.contacts = data;
-    this.emit('change');
-  }
-
-  checkSaveStatus(message) {
-      this.saveStatus = message;
-      this.emit('change');
-  }
-
-  showDeleteStatus(message) {
-      this.deleteStatus = message;
-      this.emit('change');
-  }
-
-  getDeleteMessage() {
-    return this.deleteStatus;
-  }
-
-  showUpdateStatus(message) {
-      this.updateMessage = message;
-      this.emit('change');
-  }
-
-  getUpdateMessage() {
-    return this.updateMessage;
-  }
   
-  getSaveStatus() {
-    return this.saveStatus;
-  }
-
-  getContacts() {
-    return this.contacts;
-  }
-
   handleActions(action) {
     switch (action.type) {
-      case 'LOAD_CONTACTS':
+      case 'SIGN_UP':
         this.loadContacts(action.data);
         break;
-      case 'SAVE_DATA':
+      case 'SIGN_IN':
         this.checkSaveStatus(action.message);
         break;
-      case 'DELETE_DATA':
-        this.showDeleteStatus(action.message);
-        break;
-      case 'UPDATE_DATA':
-        this.showUpdateStatus(action.message);
-        break;
+    
     }
   }
 }

@@ -85,3 +85,30 @@ export const group = (groupID) => {
       }
     });
 };
+
+
+// export const addUser = (groupID) => {
+
+//   const groupID = req.params.groupID;
+//    // Firebase get all users
+//     const uid = req.params.uid;
+//     usersRef
+//     .child(uid)
+//     .once('value', (snapshot) => {
+//       const userEmail = snapshot.exists() ? snapshot
+//       .val()
+//       .email : 'No email';
+
+//       groupRef
+//       .child(groupID)
+//       .child('users')
+//       .push(userEmail)
+//       .then(() => {
+//         res.send('User added successfully');
+//       });
+//     })
+//  .catch((err) => {
+//    res.send(err);
+//  });
+ 
+//   };
