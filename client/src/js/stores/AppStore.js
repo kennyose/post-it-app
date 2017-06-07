@@ -1,19 +1,69 @@
-const AppDispatcher = require('../dispatcher/AppDispatcher');
-const EventEmitter = require('events').EventEmitter;
-const assign = require('object-assign');
+import { EventEmitter } from 'events';
+import dispatcher from '../dispatcher/AppDispatcher';
 
-
-const CHANGE_EVENT = 'change';
-
-const AppStore = assign({}, EventEmitter.prototype, {
-  emitChange: () => {
-    this.emit(CHANGE_EVENT);
+class AppStore extends EventEmitter {
+  constructor() {
+    super();
+    this.state = {
+      username: '',
+      password: '',
+      email: ''
   }
-});
 
-AppDispatcher.register((payload) => {
-  console.log(payload);
-  return true;
-});
+  loadContacts(data) {
+    this.contacts = data;
+    this.emit('change');
+  }
 
-module.exports = AppStore;
+  checkSaveStatus(message) {
+      this.saveStatus = message;
+      this.emit('change');
+  }
+
+  showDeleteStatus(message) {
+      this.deleteStatus = message;
+      this.emit('change');
+  }
+
+  getDeleteMessage() {
+    return this.deleteStatus;
+  }
+
+  showUpdateStatus(message) {
+      this.updateMessage = message;
+      this.emit('change');
+  }
+
+  getUpdateMessage() {
+    return this.updateMessage;
+  }
+  
+  getSaveStatus() {
+    return this.saveStatus;
+  }
+
+  getContacts() {
+    return this.contacts;
+  }
+
+  handleActions(action) {
+    switch (action.type) {
+      case 'LOAD_CONTACTS':
+        this.loadContacts(action.data);
+        break;
+      case 'SAVE_DATA':
+        this.checkSaveStatus(action.message);
+        break;
+      case 'DELETE_DATA':
+        this.showDeleteStatus(action.message);
+        break;
+      case 'UPDATE_DATA':
+        this.showUpdateStatus(action.message);
+        break;
+    }
+  }
+}
+
+const appStore = new AppStore();
+dispatcher.register(appStore.handleActions.bind(appStore));
+export default appStore;

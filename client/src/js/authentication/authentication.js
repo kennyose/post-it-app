@@ -1,10 +1,12 @@
-import { usersRef, firebaseAuth } from '../firebase/firebase';
+import { usersRef, firebaseAuth, groupRef } from '../firebase/firebase';
+
+
+
 
 // Sign Up Authentication
 export const auth = (username, email, pw) => {
   return firebaseAuth().createUserWithEmailAndPassword(email, pw)
     .then(() => {
-// add element to database
       const result = firebaseAuth().currentUser;
       usersRef.child(result.uid).set({
         username,
@@ -24,11 +26,10 @@ export const logout = () => {
 };
 
 
-// User SignIn
+// SignIn Authentication
 export const login = (email, pw) =>  {
   return firebaseAuth().signInWithEmailAndPassword(email, pw)
     .catch((error) => {
-  // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
 
@@ -55,4 +56,29 @@ export const saveUser = (user) => {
       uid: user.uid
     })
     .then(() => user);
+};
+
+
+// This will allow authenticated users create group
+export const group = (groupID) => {
+  return groupRef
+    .child(groupID)
+    .once('value', (snapshot) => {
+      if (!snapshot.exists()) {
+        groupRef
+      .child(groupID)
+      .set({
+        id: groupID,
+        users: null
+      })
+      .then(() => {
+        console.log(`Group ${groupID} created`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      } else {
+        console.log('Group already exists');
+      }
+    });
 };

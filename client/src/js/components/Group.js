@@ -1,7 +1,17 @@
 import React, {Component} from 'react';
-import { usersRef, firebaseAuth } from '../firebase/firebase';
+
+import { group } from '../authentication/authentication'
 
 class Group extends Component {
+
+    handleSubmit(e){
+        e.preventDefault();
+       var groupID = this.refs.group.value;
+       console.log(groupID)
+       group(groupID)
+    
+
+    }
 
 
   render() {
@@ -10,9 +20,9 @@ class Group extends Component {
        
       <section className="centralize">
           <p>Create a Group</p>
-           <form>
+           <form onSubmit={this.handleSubmit.bind(this)}>
         
-        <input type="text" name="groupname" defaultValue="Group Name" />
+        <input type="text" name="groupname" ref= "group"/>
        
         
         <input type="submit" defaultValue="Create Group" />
