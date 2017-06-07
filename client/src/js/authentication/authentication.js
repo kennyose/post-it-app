@@ -1,10 +1,12 @@
-import { usersRef, firebaseAuth } from '../firebase/firebase';
+import { usersRef, firebaseAuth, groupRef } from '../firebase/firebase';
+
+
+
 
 // Sign Up Authentication
 export const auth = (username, email, pw) => {
   return firebaseAuth().createUserWithEmailAndPassword(email, pw)
     .then(() => {
-// add element to database
       const result = firebaseAuth().currentUser;
       usersRef.child(result.uid).set({
         username,
@@ -24,11 +26,10 @@ export const logout = () => {
 };
 
 
-// User SignIn
+// SignIn Authentication
 export const login = (email, pw) =>  {
   return firebaseAuth().signInWithEmailAndPassword(email, pw)
     .catch((error) => {
-  // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
 
@@ -56,3 +57,58 @@ export const saveUser = (user) => {
     })
     .then(() => user);
 };
+
+
+// This will allow authenticated users create group
+export const group = (groupID) => {
+ 
+  return groupRef
+    .child(groupID)
+    .once('value', (snapshot) => {
+      if (!snapshot.exists()) {
+        groupRef
+      .child(groupID)
+      .set({
+        id: groupID,
+        users: null
+      })
+      .then(() => {
+        alert(`Group ${groupID} successfuly created`);
+        console.log(`Group ${groupID} successfuly created`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      } else {
+        alert('Group already exists');
+        console.log('Group already exists');
+      }
+    });
+};
+
+
+// export const addUser = (groupID) => {
+
+//   const groupID = req.params.groupID;
+//    // Firebase get all users
+//     const uid = req.params.uid;
+//     usersRef
+//     .child(uid)
+//     .once('value', (snapshot) => {
+//       const userEmail = snapshot.exists() ? snapshot
+//       .val()
+//       .email : 'No email';
+
+//       groupRef
+//       .child(groupID)
+//       .child('users')
+//       .push(userEmail)
+//       .then(() => {
+//         res.send('User added successfully');
+//       });
+//     })
+//  .catch((err) => {
+//    res.send(err);
+//  });
+ 
+//   };
