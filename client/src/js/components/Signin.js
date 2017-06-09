@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { login, resetPassword } from '../authentication/authentication'
+import axios from 'axios';
 
 function setErrorMsg(error) {
   return {
@@ -11,11 +11,9 @@ class Signin extends Component {
   state = { loginMessage: null }
   handleSubmit = (e) => {
     e.preventDefault()
-    login(this.email.value, this.pw.value)
-      .catch((error) => {
-          this.setState(setErrorMsg('Invalid username/password.'))
-        })
+    axios.post('/user/signin', {email: this.email.value, password: this.password.value})
   }
+   
   resetPassword = () => {
     resetPassword(this.email.value)
       .then(() => this.setState(setErrorMsg(`Password reset email sent to ${this.email.value}.`)))
@@ -33,7 +31,7 @@ class Signin extends Component {
             <input type="text" placeholder="Email" name="email" ref={(email) => this.email = email}   required />
 
             <label><b>Password</b></label>
-            <input type="password" placeholder="Password" name="psw" ref={(pw) => this.pw = pw}  required />
+            <input type="password" placeholder="Password" name="password" ref={(password) => this.password = password}  required />
            
             {
             this.state.loginMessage &&
