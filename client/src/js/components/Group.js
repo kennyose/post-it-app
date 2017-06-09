@@ -44,7 +44,7 @@ class Group extends Component {
           let group = item.val().id
           groups.push(group);
          return(
-               <TodoItem item={item} key={index} /> 
+               <GroupItem item={item} key={index} /> 
               );
             }.bind(this)); 
 })
@@ -87,7 +87,7 @@ class Group extends Component {
   }
 }
 
-var TodoItem = React.createClass({
+/*var GroupItem = React.createClass({
   render: function(){
     return(
       <li>
@@ -97,5 +97,5 @@ var TodoItem = React.createClass({
       </li>
     )
   }
-})
+})*/
 export default Group;

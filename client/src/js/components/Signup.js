@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { auth } from '../authentication/authentication'
+import axios from 'axios';
 
 
 function setErrorMsg(error) {
@@ -11,10 +11,12 @@ function setErrorMsg(error) {
 class Signup extends Component {
 
   state = { registerError: null }
+
   handleSubmit = (e) => {
     e.preventDefault()
-    auth(this.username.value, this.email.value, this.pw.value)
-      .catch(e => this.setState(setErrorMsg(e)))
+    axios.post('/user/signup', {username:this.username.value, email: this.email.value, password: this.password.value} )
+    alert("Welcome to PostIt " + this.username.value)
+  
   }
 
     render() {
@@ -28,13 +30,13 @@ class Signup extends Component {
           <div className="container">
 
             <label><b>Username</b></label>
-            <input type="text" placeholder="Username" name="username" ref={(username) => this.username = username}/>
+            <input type="text" placeholder="Username" name="username" ref={(username) => this.username = username} required/>
 
             <label><b>Email</b></label>
-            <input type="text" placeholder="Email" name="email" ref={(email) => this.email = email} />
+            <input type="text" placeholder="Email" name="email" ref={(email) => this.email = email} required />
 
             <label><b>Password</b></label>
-            <input type="password" placeholder="Password" name="psw" ref={(pw) => this.pw = pw}/>
+            <input type="password" placeholder="Password" name="psw" ref={(password) => this.password = password} required/>
            
              {
             this.state.registerError &&
