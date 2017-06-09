@@ -1,16 +1,24 @@
-// import {db, firebase, groupRef, usersRef } from '../firebase/firebase';
-
-
-const AppDispatcher = require('../dispatcher/AppDispatcher');
-const AppConstants = require('../constants/AppConstants');
+import axios from 'axios';
+import {AppDispatcher} from '../dispatcher/AppDispatcher';
+import AppConstants from '../constants/AppConstants';
 
 const AppActions = {
   signUp: (email, password, username) => {
-    AppDispatcher.handleSignUp({
-      actionType: AppConstants.SIGN_UP,
-      item
-    });
-  }
+
+    axios.post('user/signup')
+      .then(contacts => {
+        AppDispatcher.dispatch({
+          actionType: ContactConstants.RECIEVE_CONTACTS,
+          contacts: contacts
+        });
+      })
+      .catch(message => {
+        AppDispatcher.dispatch({
+          actionType: ContactConstants.RECIEVE_CONTACTS_ERROR,
+          message: message
+        });
+      });
+  },
 
    signIn: (email, password) => {
     AppDispatcher.handleSignUp({
